@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.Master.cs" Inherits="BizAppDev.staff" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+     <!-- Bootstrap 4.5.2 CSS -->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/css/fontastic.css">
+    <!-- Google fonts - Poppins -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/img/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="https://colorlib.com//polygon/adminty/files/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://colorlib.com//polygon/adminty/files/assets/icon/icofont/css/icofont.css">
+    <link rel="stylesheet" href="https://colorlib.com/polygon/octopus/assets/vendor/bootstrap-datepicker/css/datepicker3.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <!-- Choices CSS-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/vendor/choices.js/public/assets/styles/choices.min.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/css/style.default.premium.2a30c8f8.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/css/custom.0a822280.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/img/favicon.3903ee9d.ico">
+    <link rel="stylesheet" type="text/css" href="https://colorlib.com//polygon/adminty/files/bower_components/font-awesome/css/font-awesome.min.css%22%3E" />
+    <link rel="stylesheet" type="text/css" href="https://colorlib.com//polygon/adminty/files/assets/icon/icofont/css/icofont.css%22%3E" />
+    <link rel="stylesheet" href="https://colorlib.com/polygon/octopus/assets/vendor/bootstrap-datepicker/css/datepicker3.css%22%3E" />
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css%22%3E" />
+
+</head>
+    <body>
+         <header class="header">
+    <nav class="navbar">
+      <!-- Search Box-->
+      <div class="search-box">
+        <button class="dismiss"><i class="icon-close"></i></button>
+        <form id="searchForm" action="#" role="search">
+          <input type="search" placeholder="What are you looking for..." class="form-control">
+        </form>
+      </div>
+      <div class="container-fluid">
+        <div class="navbar-holder d-flex align-items-center justify-content-between">
+          <!-- Navbar Header-->
+          <div class="navbar-header">
+            <!-- Navbar Brand --><a href="#" class="navbar-brand d-none d-sm-inline-block">
+              <div class="brand-text d-none d-lg-inline-block"><img alt="KIM SIMI ZHUA Ltd. " class="logo-full"></div>
+              <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
+            <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+          </div>
+          <!-- Navbar Menu -->
+          <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+            <!-- Search-->
+            <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
+            <!-- Notifications-->
+            <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red badge-corner">12</span></a>
+              <ul aria-labelledby="notifications" class="dropdown-menu">
+                <li><a rel="nofollow" href="#" class="dropdown-item">
+                    <div class="notification">
+                      <div class="notification-content"><i class="fa fa-envelope bg-green"></i>Your leave request has been approved</div>
+                      <div class="notification-time"><small>4 minutes ago</small></div>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item">
+                    <div class="notification">
+                      <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                      <div class="notification-time"><small>4 minutes ago</small></div>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item">
+                    <div class="notification">
+                      <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
+                      <div class="notification-time"><small>4 minutes ago</small></div>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item">
+                    <div class="notification">
+                      <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
+                      <div class="notification-time"><small>10 minutes ago</small></div>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
+              </ul>
+            </li>
+            <!-- Messages                        -->
+            <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
+              <ul aria-labelledby="notifications" class="dropdown-menu">
+                <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                    <div class="msg-profile"> <img src="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                    <div class="msg-body">
+                      <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                    <div class="msg-profile"> <img src="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                    <div class="msg-body">
+                      <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
+                    <div class="msg-profile"> <img src="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                    <div class="msg-body">
+                      <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
+                    </div></a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages   </strong></a></li>
+              </ul>
+            </li>
+            <!-- Languages dropdown    -->
+            <li class="nav-item dropdown"><a id="languages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link language dropdown-toggle"><img src="https://demo.bootstrapious.com/admin/1-4-6/img/flags/16/GB.png" alt="English"><span class="d-none d-sm-inline-block">English</span></a>
+              <ul aria-labelledby="languages" class="dropdown-menu">
+                <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="https://demo.bootstrapious.com/admin/1-4-6/img/flags/16/DE.png" alt="English" class="mr-2">German</a></li>
+                <li><a rel="nofollow" href="#" class="dropdown-item"> <img src="https://demo.bootstrapious.com/admin/1-4-6/img/flags/16/FR.png" alt="English" class="mr-2">French                                         </a></li>
+              </ul>
+            </li>
+            <!-- Logout    -->
+            <li class="nav-item"><a href="/Loginpage.aspx" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="page-content d-flex align-items-stretch">
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <!-- Sidebar Header-->
+      <div class="sidebar-header d-flex align-items-center">
+        <div class="avatar"><img src="https://d19m59y37dris4.cloudfront.net/admin/1-4-6/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+        <div class="title">
+          <h1 class="h4">
+              <asp:Label ID="label_Name" runat="server"></asp:Label></h1>
+          <p>
+              <asp:Label ID="lbl_position" runat="server" Text=""></asp:Label></p>
+        </div>
+      </div>
+       <!-- Sidebar navigation-->
+        
+        <ul class="list-unstyled">
+          
+                <li><a href="<asp:literal id="hrefString" runat="server"></asp:literal>">Edit Your Profile</a></li>
+            </ul>
+        
+       <span class="heading">Customer Information</span>
+          <ul class="list-unstyled">
+                <li class="active"><a runat="server" href="~/Coupons(lermin).aspx">Coupons</a></li>
+                <li><a runat="server" href="~/MembershipTierList.aspx">Member Tier List</a></li>
+                <li><a runat="server" href="~/Offers(lermin).aspx">Offers</a></li>
+                <li><a runat="server" href="~/Customer.aspx">Customer Details</a></li>
+              </ul>
+<!--            <li ><a href="/createSupplier"> <i class="icon-padnote"></i>Add Supplier</a></li>-->
+<!--            <li><a href="/supplier_list"> <i class="icon-list"></i>Supplier List</a></li>-->
+<!--            <li><a href="/productNavigation"> <i class="icon-list"></i>Product Navigation</a></li>-->
+<!--            <li><a href="/createProduct"> <i class="icon-padnote"></i>Add Product</a></li>-->
+             <span class="heading">Staff</span>
+                <ul class="list-unstyled">
+                    <li><a runat="server" href="~/EmployeeList.aspx"> <i class="icon-interface-windows"></i>Staff Position Allocation</a></li>
+                </ul>
+            <span class="heading">Products</span>
+                <ul class="list-unstyled">
+                    <li><a runat="server" href="~/Products(lermin).aspx"> <i class="icon-interface-windows"></i>Products/ Services</a></li>
+                    <li><a runat="server" href="~/orders(lermin).aspx"> <i class="icon-interface-windows"></i>Order for Products</a></li>
+                </ul>
+          <span class="heading">Employee management</span>
+      <ul class="list-unstyled">
+         <li><a href="Employeelist.aspx"> <i class="fa fa-bar-chart"></i>Employee List</a></li>
+            <li><a href="Adminlist.aspx"> <i class="fa fa-bar-chart"></i>Admin List</a></li>
+            <li><a href="Addemployee.aspx"> <i class="fa fa-bar-chart"></i>Add Employee Form</a></li>
+      </ul>
+      <span class="heading">Order management</span>
+      <ul class="list-unstyled">
+         <li> <a href="AcceptedOrder.aspx"> <i class="icon-flask"></i>Pending Order</a></li>
+         <li> <a href="Orderstatus.aspx"> <i class="icon-flask"></i>Processing Order</a></li>
+          <li> <a href="ProductCust.aspx"> <i class="icon-flask"></i>Product Customization</a></li>
+      </ul>
+
+    </nav>
+      
+      <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer style="width:800px;">
+                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+            </footer>
+        </div>
+     </div>
+         <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/vendor/chart.js/Chart.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/vendor/just-validate/js/just-validate.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/vendor/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/js/js-cookie.0d5f0e08.js"> </script>
+    <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/js/demo.bbd40f0c.js"> </script>
+    <!-- Main File-->
+    <script src="https://d19m59y37dris4.cloudfront.net/admin-premium/2-0/js/front.c39dfc0c.js"></script>
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+      
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </body>
+    
+    </html>
+

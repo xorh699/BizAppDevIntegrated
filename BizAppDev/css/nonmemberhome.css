@@ -1,0 +1,27 @@
+﻿body {
+}
+
+.card {
+    text-align: center;
+}
+
+#Image1 {
+}
+
+.header {
+    padding: 60px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    margin-bottom: 40px;
+    background-image: url(../images/heaadercier.jpg);
+    background-color: transparent !important;
+}
+
+    .header a {
+        text-decoration: underline;
+    }
+
+.headerbox {
+    border:
+}

@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="BizAppDev.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+           <div>
+           <nav>
+            <label class="logo">KimZua E-Store<br />
+               </label>
+
+               &nbsp;<asp:Menu ID="NavigationMeny" runat="server">
+                   <Items>
+                        <asp:MenuItem NavigateUrl="#" Text="Product"/>
+                        <asp:MenuItem NavigateUrl="#" Text="Services"/>
+                        <asp:MenuItem NavigateUrl="#" Text="Contact Us"/>
+                        <asp:MenuItem NavigateUrl="#" Text="FAQ"/>
+                   </Items>
+               </asp:Menu>
+
+           </nav>
+        </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

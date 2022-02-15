@@ -1,0 +1,983 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A434705A-304D-435C-A91B-8EEBDF6C4864}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizAppDev</RootNamespace>
+    <AssemblyName>BizAppDev</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44397</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="Stripe.net, Version=39.90.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stripe.net.39.90.0\lib\net461\Stripe.net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AcceptedOrder.aspx" />
+    <Content Include="Addemployee.aspx" />
+    <Content Include="addOffer.aspx" />
+    <Content Include="AddPersonalCoupon.aspx" />
+    <Content Include="AddProduct.aspx" />
+    <Content Include="Admininfo.aspx" />
+    <Content Include="Adminlist.aspx" />
+    <Content Include="AdvisorsView.aspx" />
+    <Content Include="checkout.aspx" />
+    <Content Include="checkoutoverview.aspx" />
+    <Content Include="CouponDetail%28employee%29.aspx" />
+    <Content Include="CouponDetail.aspx" />
+    <Content Include="CouponInsert.aspx" />
+    <Content Include="Coupons%28lermin%29%28employee%29.aspx" />
+    <Content Include="Coupons%28lermin%29.aspx" />
+    <Content Include="Coupons2Detail%28employee%29.aspx" />
+    <Content Include="Coupons2Detail.aspx" />
+    <Content Include="CouponsValidity%28lermin%29%28employee%29.aspx" />
+    <Content Include="CouponsValidity%28lermin%29.aspx" />
+    <Content Include="Customer%28employee%29.aspx" />
+    <Content Include="Customer.aspx" />
+    <Content Include="CustomerCoupon.aspx" />
+    <Content Include="CustomerCoupons.aspx" />
+    <Content Include="CustomerDetails.aspx" />
+    <Content Include="CustomerEditDetails.aspx" />
+    <Content Include="CustomerLanding.aspx" />
+    <Content Include="CustomerMain.css" />
+    <Content Include="CustomerMainPage.aspx" />
+    <Content Include="CustomerMoreInfo%28employee%29.aspx" />
+    <Content Include="CustomerMoreInfo.aspx" />
+    <Content Include="CustomerPoints.aspx" />
+    <Content Include="CustomerPurchaseCoupon.aspx" />
+    <Content Include="CustomerViewCoupon.aspx" />
+    <Content Include="CustomerViewPerks.aspx" />
+    <Content Include="CustViewOrders.aspx" />
+    <Content Include="EditOrder.aspx" />
+    <Content Include="EditProfile%28employee%29.aspx" />
+    <Content Include="EditProfile.aspx" />
+    <Content Include="EduVideoInsert.aspx" />
+    <Content Include="Employeeinfo.aspx" />
+    <Content Include="employeelist%28nut%29.aspx" />
+    <Content Include="EmployeeList.aspx" />
+    <Content Include="EmployeeListMoreInfo.aspx" />
+    <Content Include="Eorderinfo.aspx" />
+    <Content Include="Eorderstatus.aspx" />
+    <Content Include="Ependingorder.aspx" />
+    <Content Include="Eprodcustdetails.aspx" />
+    <Content Include="Eproductcust.aspx" />
+    <Content Include="HiringAdvisor.aspx" />
+    <Content Include="HiringPriest.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="images\winston-chen-5XBn_RTp7ik-unsplash.jpg" />
+    <Content Include="Loginpage.aspx" />
+    <Content Include="MembershipMoreInfo%28employee%29.aspx" />
+    <Content Include="MembershipMoreInfo.aspx" />
+    <Content Include="MembershipTierList%28employee%29.aspx" />
+    <Content Include="MembershipTierList.aspx" />
+    <Content Include="nonmembercheckout.aspx" />
+    <Content Include="nonmembercheckoutoverview.aspx" />
+    <Content Include="nonmembereditorder.aspx" />
+    <Content Include="nonmemberhome.aspx" />
+    <Content Include="nonmemberproductpage.aspx" />
+    <Content Include="nonmemberproduct_desc.aspx" />
+    <Content Include="nonmembersuccess.aspx" />
+    <Content Include="nonmemberViewCart.aspx" />
+    <Content Include="offerDetails%28employee%29.aspx" />
+    <Content Include="offerDetails.aspx" />
+    <Content Include="Offers%28lermin%29%28employee%29.aspx" />
+    <Content Include="Offers%28lermin%29.aspx" />
+    <Content Include="Orderinfo.aspx" />
+    <Content Include="orders%28lermin%29%28employee%29.aspx" />
+    <Content Include="orders%28lermin%29.aspx" />
+    <Content Include="Orderstatus.aspx" />
+    <Content Include="PackageAdd.aspx" />
+    <Content Include="payment.aspx" />
+    <Content Include="PointsTransactions.aspx" />
+    <Content Include="PointTierList.aspx" />
+    <Content Include="PriestsView.aspx" />
+    <Content Include="Prodcustdetails.aspx" />
+    <Content Include="ProductCust.aspx" />
+    <Content Include="ProductCustomization.aspx" />
+    <Content Include="ProductCustView.aspx" />
+    <Content Include="Products%28lermin%29%28employee%29.aspx" />
+    <Content Include="Products%28lermin%29.aspx" />
+    <Content Include="ProductsOrdering.aspx" />
+    <Content Include="product_desc.aspx" />
+    <Content Include="Rewards.aspx" />
+    <Content Include="Signuppage.aspx" />
+    <Content Include="StaffAddPerks.aspx" />
+    <Content Include="StaffAddPointTier.aspx" />
+    <Content Include="StaffEditTier.aspx" />
+    <Content Include="StaffViewPerks.aspx" />
+    <Content Include="StaffViewTier.aspx" />
+    <Content Include="StaffViewTierPerks.aspx" />
+    <Content Include="StaffViewTiers.aspx" />
+    <Content Include="success.aspx" />
+    <Content Include="success.html" />
+    <Content Include="VideosView.aspx" />
+    <Content Include="ViewCart.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AcceptedOrder.aspx.cs">
+      <DependentUpon>AcceptedOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcceptedOrder.aspx.designer.cs">
+      <DependentUpon>AcceptedOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Addemployee.aspx.cs">
+      <DependentUpon>Addemployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Addemployee.aspx.designer.cs">
+      <DependentUpon>Addemployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addOffer.aspx.cs">
+      <DependentUpon>addOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addOffer.aspx.designer.cs">
+      <DependentUpon>addOffer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddPersonalCoupon.aspx.cs">
+      <DependentUpon>AddPersonalCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPersonalCoupon.aspx.designer.cs">
+      <DependentUpon>AddPersonalCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs" />
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admininfo.aspx.cs">
+      <DependentUpon>Admininfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admininfo.aspx.designer.cs">
+      <DependentUpon>Admininfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminlist.aspx.cs">
+      <DependentUpon>Adminlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminlist.aspx.designer.cs">
+      <DependentUpon>Adminlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Advisor.cs" />
+    <Compile Include="AdvisorsView.aspx.cs">
+      <DependentUpon>AdvisorsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdvisorsView.aspx.designer.cs">
+      <DependentUpon>AdvisorsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkout.aspx.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkout.aspx.designer.cs">
+      <DependentUpon>checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="checkoutoverview.aspx.cs">
+      <DependentUpon>checkoutoverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="checkoutoverview.aspx.designer.cs">
+      <DependentUpon>checkoutoverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coupon.cs" />
+    <Compile Include="CouponDetail%28employee%29.aspx.cs">
+      <DependentUpon>CouponDetail%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CouponDetail%28employee%29.aspx.designer.cs">
+      <DependentUpon>CouponDetail%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponDetail.aspx.cs">
+      <DependentUpon>CouponDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CouponDetail.aspx.designer.cs">
+      <DependentUpon>CouponDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponInsert.aspx.cs">
+      <DependentUpon>CouponInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CouponInsert.aspx.designer.cs">
+      <DependentUpon>CouponInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons%28lermin%29%28employee%29.aspx.cs">
+      <DependentUpon>Coupons%28lermin%29%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coupons%28lermin%29%28employee%29.aspx.designer.cs">
+      <DependentUpon>Coupons%28lermin%29%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons%28lermin%29.aspx.cs">
+      <DependentUpon>Coupons%28lermin%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coupons%28lermin%29.aspx.designer.cs">
+      <DependentUpon>Coupons%28lermin%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons.cs" />
+    <Compile Include="Coupons2.cs" />
+    <Compile Include="Coupons2Detail%28employee%29.aspx.cs">
+      <DependentUpon>Coupons2Detail%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coupons2Detail%28employee%29.aspx.designer.cs">
+      <DependentUpon>Coupons2Detail%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons2Detail.aspx.cs">
+      <DependentUpon>Coupons2Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Coupons2Detail.aspx.designer.cs">
+      <DependentUpon>Coupons2Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponsValidity%28lermin%29%28employee%29.aspx.cs">
+      <DependentUpon>CouponsValidity%28lermin%29%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CouponsValidity%28lermin%29%28employee%29.aspx.designer.cs">
+      <DependentUpon>CouponsValidity%28lermin%29%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CouponsValidity%28lermin%29.aspx.cs">
+      <DependentUpon>CouponsValidity%28lermin%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CouponsValidity%28lermin%29.aspx.designer.cs">
+      <DependentUpon>CouponsValidity%28lermin%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer%28employee%29.aspx.cs">
+      <DependentUpon>Customer%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer%28employee%29.aspx.designer.cs">
+      <DependentUpon>Customer%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs" />
+    <Compile Include="CustomerCoupon.aspx.cs">
+      <DependentUpon>CustomerCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerCoupon.aspx.designer.cs">
+      <DependentUpon>CustomerCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerCoupons.aspx.cs">
+      <DependentUpon>CustomerCoupons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerCoupons.aspx.designer.cs">
+      <DependentUpon>CustomerCoupons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDetails.aspx.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerDetails.aspx.designer.cs">
+      <DependentUpon>CustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerEditDetails.aspx.cs">
+      <DependentUpon>CustomerEditDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerEditDetails.aspx.designer.cs">
+      <DependentUpon>CustomerEditDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLanding.aspx.cs">
+      <DependentUpon>CustomerLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerLanding.aspx.designer.cs">
+      <DependentUpon>CustomerLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMain.Master.cs">
+      <DependentUpon>CustomerMain.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerMain.Master.designer.cs">
+      <DependentUpon>CustomerMain.Master</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMainPage.aspx.cs">
+      <DependentUpon>CustomerMainPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerMainPage.aspx.designer.cs">
+      <DependentUpon>CustomerMainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMoreInfo%28employee%29.aspx.cs">
+      <DependentUpon>CustomerMoreInfo%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerMoreInfo%28employee%29.aspx.designer.cs">
+      <DependentUpon>CustomerMoreInfo%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerMoreInfo.aspx.cs">
+      <DependentUpon>CustomerMoreInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerMoreInfo.aspx.designer.cs">
+      <DependentUpon>CustomerMoreInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPoints.aspx.cs">
+      <DependentUpon>CustomerPoints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPoints.aspx.designer.cs">
+      <DependentUpon>CustomerPoints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerPurchaseCoupon.aspx.cs">
+      <DependentUpon>CustomerPurchaseCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPurchaseCoupon.aspx.designer.cs">
+      <DependentUpon>CustomerPurchaseCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerViewCoupon.aspx.cs">
+      <DependentUpon>CustomerViewCoupon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerViewCoupon.aspx.designer.cs">
+      <DependentUpon>CustomerViewCoupon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerViewPerks.aspx.cs">
+      <DependentUpon>CustomerViewPerks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerViewPerks.aspx.designer.cs">
+      <DependentUpon>CustomerViewPerks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustViewOrders.aspx.cs">
+      <DependentUpon>CustViewOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustViewOrders.aspx.designer.cs">
+      <DependentUpon>CustViewOrders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditOrder.aspx.cs">
+      <DependentUpon>EditOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditOrder.aspx.designer.cs">
+      <DependentUpon>EditOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile%28employee%29.aspx.cs">
+      <DependentUpon>EditProfile%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProfile%28employee%29.aspx.designer.cs">
+      <DependentUpon>EditProfile%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EduVideoInsert.aspx.cs">
+      <DependentUpon>EduVideoInsert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EduVideoInsert.aspx.designer.cs">
+      <DependentUpon>EduVideoInsert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs" />
+    <Compile Include="Employee.Master.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employee.Master.designer.cs">
+      <DependentUpon>Employee.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Employeeinfo.aspx.cs">
+      <DependentUpon>Employeeinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Employeeinfo.aspx.designer.cs">
+      <DependentUpon>Employeeinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="employeelist%28nut%29.aspx.cs">
+      <DependentUpon>employeelist%28nut%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="employeelist%28nut%29.aspx.designer.cs">
+      <DependentUpon>employeelist%28nut%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeList.aspx.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeList.aspx.designer.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeListMoreInfo.aspx.cs">
+      <DependentUpon>EmployeeListMoreInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeeListMoreInfo.aspx.designer.cs">
+      <DependentUpon>EmployeeListMoreInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eorderinfo.aspx.cs">
+      <DependentUpon>Eorderinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eorderinfo.aspx.designer.cs">
+      <DependentUpon>Eorderinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eorderstatus.aspx.cs">
+      <DependentUpon>Eorderstatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eorderstatus.aspx.designer.cs">
+      <DependentUpon>Eorderstatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ependingorder.aspx.cs">
+      <DependentUpon>Ependingorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ependingorder.aspx.designer.cs">
+      <DependentUpon>Ependingorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eprodcustdetails.aspx.cs">
+      <DependentUpon>Eprodcustdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eprodcustdetails.aspx.designer.cs">
+      <DependentUpon>Eprodcustdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eproductcust.aspx.cs">
+      <DependentUpon>Eproductcust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eproductcust.aspx.designer.cs">
+      <DependentUpon>Eproductcust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HiringAdvisor.aspx.cs">
+      <DependentUpon>HiringAdvisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HiringAdvisor.aspx.designer.cs">
+      <DependentUpon>HiringAdvisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HiringPriest.aspx.cs">
+      <DependentUpon>HiringPriest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HiringPriest.aspx.designer.cs">
+      <DependentUpon>HiringPriest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Loginpage.aspx.cs">
+      <DependentUpon>Loginpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Loginpage.aspx.designer.cs">
+      <DependentUpon>Loginpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipMoreInfo%28employee%29.aspx.cs">
+      <DependentUpon>MembershipMoreInfo%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembershipMoreInfo%28employee%29.aspx.designer.cs">
+      <DependentUpon>MembershipMoreInfo%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipMoreInfo.aspx.cs">
+      <DependentUpon>MembershipMoreInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembershipMoreInfo.aspx.designer.cs">
+      <DependentUpon>MembershipMoreInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipTier.cs" />
+    <Compile Include="MembershipTierList%28employee%29.aspx.cs">
+      <DependentUpon>MembershipTierList%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembershipTierList%28employee%29.aspx.designer.cs">
+      <DependentUpon>MembershipTierList%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MembershipTierList.aspx.cs">
+      <DependentUpon>MembershipTierList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MembershipTierList.aspx.designer.cs">
+      <DependentUpon>MembershipTierList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmembercheckout.aspx.cs">
+      <DependentUpon>nonmembercheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmembercheckout.aspx.designer.cs">
+      <DependentUpon>nonmembercheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmembercheckoutoverview.aspx.cs">
+      <DependentUpon>nonmembercheckoutoverview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmembercheckoutoverview.aspx.designer.cs">
+      <DependentUpon>nonmembercheckoutoverview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmembereditorder.aspx.cs">
+      <DependentUpon>nonmembereditorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmembereditorder.aspx.designer.cs">
+      <DependentUpon>nonmembereditorder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmemberhome.aspx.cs">
+      <DependentUpon>nonmemberhome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmemberhome.aspx.designer.cs">
+      <DependentUpon>nonmemberhome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmembermaster.Master.cs">
+      <DependentUpon>nonmembermaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmembermaster.Master.designer.cs">
+      <DependentUpon>nonmembermaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="nonmemberproductpage.aspx.cs">
+      <DependentUpon>nonmemberproductpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmemberproductpage.aspx.designer.cs">
+      <DependentUpon>nonmemberproductpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmemberproduct_desc.aspx.cs">
+      <DependentUpon>nonmemberproduct_desc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmemberproduct_desc.aspx.designer.cs">
+      <DependentUpon>nonmemberproduct_desc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmembersuccess.aspx.cs">
+      <DependentUpon>nonmembersuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmembersuccess.aspx.designer.cs">
+      <DependentUpon>nonmembersuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nonmemberViewCart.aspx.cs">
+      <DependentUpon>nonmemberViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nonmemberViewCart.aspx.designer.cs">
+      <DependentUpon>nonmemberViewCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="offerDetails%28employee%29.aspx.cs">
+      <DependentUpon>offerDetails%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="offerDetails%28employee%29.aspx.designer.cs">
+      <DependentUpon>offerDetails%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="offerDetails.aspx.cs">
+      <DependentUpon>offerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="offerDetails.aspx.designer.cs">
+      <DependentUpon>offerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Offers%28lermin%29%28employee%29.aspx.cs">
+      <DependentUpon>Offers%28lermin%29%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Offers%28lermin%29%28employee%29.aspx.designer.cs">
+      <DependentUpon>Offers%28lermin%29%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Offers%28lermin%29.aspx.cs">
+      <DependentUpon>Offers%28lermin%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Offers%28lermin%29.aspx.designer.cs">
+      <DependentUpon>Offers%28lermin%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Offers.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="Orderdetails.cs" />
+    <Compile Include="Orderinfo.aspx.cs">
+      <DependentUpon>Orderinfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orderinfo.aspx.designer.cs">
+      <DependentUpon>Orderinfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orders%28lermin%29%28employee%29.aspx.cs">
+      <DependentUpon>orders%28lermin%29%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orders%28lermin%29%28employee%29.aspx.designer.cs">
+      <DependentUpon>orders%28lermin%29%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orders%28lermin%29.aspx.cs">
+      <DependentUpon>orders%28lermin%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orders%28lermin%29.aspx.designer.cs">
+      <DependentUpon>orders%28lermin%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Orderstatus.aspx.cs">
+      <DependentUpon>Orderstatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Orderstatus.aspx.designer.cs">
+      <DependentUpon>Orderstatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Package.cs" />
+    <Compile Include="PackageAdd.aspx.cs">
+      <DependentUpon>PackageAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PackageAdd.aspx.designer.cs">
+      <DependentUpon>PackageAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pointsTier.cs" />
+    <Compile Include="PointsTransaction.cs" />
+    <Compile Include="PointsTransactions.aspx.cs">
+      <DependentUpon>PointsTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PointsTransactions.aspx.designer.cs">
+      <DependentUpon>PointsTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PointTierList.aspx.cs">
+      <DependentUpon>PointTierList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PointTierList.aspx.designer.cs">
+      <DependentUpon>PointTierList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Priests.cs" />
+    <Compile Include="PriestsView.aspx.cs">
+      <DependentUpon>PriestsView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PriestsView.aspx.designer.cs">
+      <DependentUpon>PriestsView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Prodcustdetails.aspx.cs">
+      <DependentUpon>Prodcustdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Prodcustdetails.aspx.designer.cs">
+      <DependentUpon>Prodcustdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductCust.aspx.cs">
+      <DependentUpon>ProductCust.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductCust.aspx.designer.cs">
+      <DependentUpon>ProductCust.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCust.cs" />
+    <Compile Include="ProductCustomization.aspx.cs">
+      <DependentUpon>ProductCustomization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductCustomization.aspx.designer.cs">
+      <DependentUpon>ProductCustomization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCustView.aspx.cs">
+      <DependentUpon>ProductCustView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductCustView.aspx.designer.cs">
+      <DependentUpon>ProductCustView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOrdering.cs" />
+    <Compile Include="Products%28lermin%29%28employee%29.aspx.cs">
+      <DependentUpon>Products%28lermin%29%28employee%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products%28lermin%29%28employee%29.aspx.designer.cs">
+      <DependentUpon>Products%28lermin%29%28employee%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Products%28lermin%29.aspx.cs">
+      <DependentUpon>Products%28lermin%29.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Products%28lermin%29.aspx.designer.cs">
+      <DependentUpon>Products%28lermin%29.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsOrdering.aspx.cs">
+      <DependentUpon>ProductsOrdering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductsOrdering.aspx.designer.cs">
+      <DependentUpon>ProductsOrdering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="product_desc.aspx.cs">
+      <DependentUpon>product_desc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="product_desc.aspx.designer.cs">
+      <DependentUpon>product_desc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rewards.aspx.cs">
+      <DependentUpon>Rewards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rewards.aspx.designer.cs">
+      <DependentUpon>Rewards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Signuppage.aspx.cs">
+      <DependentUpon>Signuppage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Signuppage.aspx.designer.cs">
+      <DependentUpon>Signuppage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAddPerks.aspx.cs">
+      <DependentUpon>StaffAddPerks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAddPerks.aspx.designer.cs">
+      <DependentUpon>StaffAddPerks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAddPointTier.aspx.cs">
+      <DependentUpon>StaffAddPointTier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAddPointTier.aspx.designer.cs">
+      <DependentUpon>StaffAddPointTier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffEditTier.aspx.cs">
+      <DependentUpon>StaffEditTier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffEditTier.aspx.designer.cs">
+      <DependentUpon>StaffEditTier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewPerks.aspx.cs">
+      <DependentUpon>StaffViewPerks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffViewPerks.aspx.designer.cs">
+      <DependentUpon>StaffViewPerks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewTier.aspx.cs">
+      <DependentUpon>StaffViewTier.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffViewTier.aspx.designer.cs">
+      <DependentUpon>StaffViewTier.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewTierPerks.aspx.cs">
+      <DependentUpon>StaffViewTierPerks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffViewTierPerks.aspx.designer.cs">
+      <DependentUpon>StaffViewTierPerks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewTiers.aspx.cs">
+      <DependentUpon>StaffViewTiers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffViewTiers.aspx.designer.cs">
+      <DependentUpon>StaffViewTiers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="success.aspx.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="success.aspx.designer.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideosView.aspx.cs">
+      <DependentUpon>VideosView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideosView.aspx.designer.cs">
+      <DependentUpon>VideosView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewCart.aspx.cs">
+      <DependentUpon>ViewCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewCart.aspx.designer.cs">
+      <DependentUpon>ViewCart.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomerMain.Master" />
+    <Content Include="Assignment.csproj" />
+    <Content Include="Main.Master" />
+    <Content Include="nonmembermaster.Master" />
+    <Content Include="Admin.Master" />
+    <Content Include="Employee.Master" />
+    <Content Include="Jossproject.csproj" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CalendarImg\" />
+    <Folder Include="css\" />
+    <Folder Include="EducationalVideos\" />
+    <Folder Include="Image\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4209</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
